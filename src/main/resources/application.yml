@@ -1,0 +1,58 @@
+spring:
+  mvc:
+    favicon:
+      enabled: false
+  jackson:
+    default-property-inclusion: non-null
+  # DataSource
+  datasource:
+    platform: h2
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:AZ;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE
+    username: sa
+    password:
+    sql-script-encoding: UTF-8
+    # DataSource - Tomcat
+    tomcat:
+      max-active: 15
+      max-idle: 10
+      min-idle: 5
+      initial-size: 2
+
+  h2:
+    console:
+      enabled: true
+
+mybatis:
+  configuration:
+    default-executor-type: reuse
+    map-underscore-to-camel-case: true
+  type-aliases-package: jp.gr.java_conf.kmine27.spring.jiro.domain
+    
+
+# Server
+server:
+  session:
+    cookie:
+      http-only: true
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto
+
+# Security
+security:
+  basic:
+    enabled: false
+
+# Management
+management:
+  add-application-context-header: false
+
+# Logging
+logging:
+  level:
+    root: info
+#    org.springframework: info
+#    org.springframework.security: debug
+  file: D:/TEMP/spring.log
+  

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="jp.gr.java_conf.kmine27.spring.jiro.mapper.JiroMapper">
+  <resultMap type="Jiro" id="jiroResultMap">
+    <id property="id" column="ID" />
+    <result property="name" column="NAME" />
+    <result property="address" column="ADDRESS" />
+    <result property="latitude" column="LATITUDE" />
+    <result property="longitude" column="LONGITUDE" />
+    <collection property="menus" ofType="Menu">
+      <id property="jiroId" column="ID" />
+      <id property="id" column="MENU_ID" />
+      <result property="name" column="MENU_NAME" />
+      <result property="price" column="MENU_PRICE" />
+    </collection>
+  </resultMap>
+</mapper>
